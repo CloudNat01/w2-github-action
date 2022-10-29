@@ -17,4 +17,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: docker build
         run: docker build . --file ./Dockerfile --tag ${{ secrtes.DOCKER_USERNAME }}/gh-action-img:latest
-      - name: docker push ${{ secrets.DOCKER_USERNAME }}/gh-action-img:latest
+      - name: docker push
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/gh-action-img:latest
